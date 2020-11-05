@@ -56,15 +56,17 @@ function PlayerGame(){
 
 // PlayerGame Works!
 
-
 function comparison(){
 
 
 }
 
+
 function Game(){
-AiGame();
-PlayerGame();
+AiGame()
+PlayerGame()
+comparison()
+
 };
 
 Game()

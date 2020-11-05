@@ -83,3 +83,10 @@ html{
     text-decoration: underline;
     margin-top: 1rem;
 }
+
+button{
+    background-color:  transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}

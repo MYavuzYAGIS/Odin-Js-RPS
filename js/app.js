@@ -15,10 +15,18 @@ const RESULT_TEXT = document.querySelector('.result').innerHTML;
 let AiScore = document.querySelector('.ai').innerHTML;
 let PlayerScore = document.querySelector('.playerx').innerHTML;
 let StaleMate = document.querySelector('.tie').innerHTML;
+let playerselect='nothing is selected';
+let aiselect;
+
+
+
+
+
+
 
 function AiGame(){
 // computer makes a random choice between 1 and 3, inclusive
-    let aiselect;
+    
     let answer =  Math.floor(Math.random()* (3) +1);
     console.log(answer)
     if (answer==1) {
@@ -35,41 +43,31 @@ function AiGame(){
 // AI GAME WORKS!
 
 
-
-
 function PlayerGame(){
-    let playerSelect;
-    const rock = document.getElementsByClassName('.rock');
-    let paper = document.getElementsByClassName('paper');
-    let scissors = document.getElementsByClassName('scissors');
-    
-    if (rock.clicked==true) {
-        playerSelect = 'rock';
-        console.log('rock is selected')
-        
-    } else if(paper.clicked==true) {
-        playerSelect ='paper'
-        console.log('rock is selected')
+    let rock = document.getElementById('rock');
+    let paper = document.getElementById('paper');
+    let scissors = document.getElementById('scissors');
 
-        
-    }else if (scissors.clicked==true){
-        playerSelect ='scissors'
-    }else {
-        console.log('nothing is selected')
-        
-    }
-
+    rock.addEventListener("click",()=>{playerselect=rock.querySelector("span").innerText; console.log(playerselect)})
+    paper.addEventListener("click",()=>{playerselect=paper.querySelector("span").innerText; console.log(playerselect)})
+    scissors.addEventListener("click",()=>{playerselect=scissors.querySelector("span").innerText; console.log(playerselect)})
+    // if user click on this, playerselect == this. else, this.
 }
+
+// PlayerGame Works!
 
 
 function comparison(){
 
 
 }
+
+function Game(){
 AiGame();
-
 PlayerGame();
+};
 
+Game()
 
 
 

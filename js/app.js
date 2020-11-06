@@ -1,20 +1,73 @@
 
 // Global Variables
-let result = document.querySelector('.result').innerText;
 let aiselect;
 let playerselect;
 // Player Variables:
 let ai_upper;
 const buttons = document.querySelectorAll('.btn')
 
-// score variables:
-let tie = document.querySelector('.tie').innerText;
-let ai = document.querySelector('.ai').innerText;
-let user = document.querySelector('.user').innerText;
-
 let scoreai=0;
 let scoreuser=0;
 let tied=0;
+// score variables:
+document.querySelector('.tie').innerText=tied;
+document.querySelector('.ai').innerText=scoreai;
+document.querySelector('.user').innerText=scoreuser;
+
+
+function game(playerselect, aiselect){
+    if(scoreuser < 5 && scoreai < 5 ){
+        if(playerselect==aiselect){
+            document.getElementById('result').textContent = 'It is a Tie!'
+            tied = tied+1
+            document.querySelector('.tie').innerText=tied
+        }else if(playerselect=='rock' && aiselect=='paper'){
+            document.getElementById('result').textContent = 'Paper Wraps the Rock, Sorry User!'
+            scoreai++;
+            document.querySelector('.ai').innerText =scoreai
+        }else if(playerselect == 'rock' && aiselect =='scissors'){
+            document.getElementById('result').textContent= 'Rock Breaks the Scissors. Cool, User!'
+            scoreuser++;
+            document.querySelector('.user').innerText = scoreuser;
+        }else if(playerselect == 'paper' && aiselect=='rock'){
+            document.getElementById('result').textContent = 'Paper Wraps the Rock!, Well done!'
+            scoreuser++;
+            document.querySelector('.user').innerText=scoreuser;
+        }else if(playerselect == 'paper' && aiselect=='scissors'){
+            document.getElementById('result').textContent = 'Ai Picked Scissors and cut the User in Half!'
+            scoreai++;
+            document.querySelector('.ai').innerText= scoreai
+        }else if(playerselect =='scissors' && aiselect=='rock'){
+            document.getElementById('result').textContent='Oh Boy! User is smashed with a ROCK!'
+            scoreai++;
+            document.querySelector('.ai').innerText = scoreai
+        }else if(playerselect == 'scissors' && aiselect=='paper'){
+            document.getElementById('result').textContent='No More AI!. Paper is in Pieces!'
+            scoreuser++;
+            document.querySelector('.user').innerText=scoreuser
+        }
+    }else{
+        if (scoreuser > scoreai && scoreuser ==5){
+            document.getElementById('result').textContent = 'Game Over. User Wins!'
+            scoreai=0;
+            scoreuser=0;
+            tied=0;
+            document.querySelector('.user').innerText=scoreuser;
+            document.querySelector('.tie').innerText=tied
+            document.querySelector('.ai').innerText=scoreai;
+        }else if(scoreai>scoreuser && scoreai ==5){
+            document.getElementById('result').textContent = 'Game Over. Ai wins'
+            scoreai=0;
+            scoreuser=0;
+            tied=0;
+            document.querySelector('.user').innerText=scoreuser;
+            document.querySelector('.tie').innerText=tied
+            document.querySelector('.ai').innerText=scoreai;
+
+        }   
+    }
+}
+
 
 // user selections
 buttons.forEach((button) =>{button.addEventListener('click',()=>{
@@ -22,41 +75,11 @@ buttons.forEach((button) =>{button.addEventListener('click',()=>{
     console.log(playerselect)
     aiselection()
     console.log(aiselect)
+    console.log(scoreai)
+    console.log(tied)
+    game(playerselect,aiselect)
     })
 })
-
-
-function game(playerselect, aiselect){
-    if(scoreuser < 5 && scoreai < 5 ){
-        if(playerselect==aiselect){
-            result = 'It is a Tie!'
-            tied = tied+1
-        }else if(playerselect=='rock' && aiselect=='paper'){
-            result = 'Paper Wraps the Rock, Sorry User!'
-            scoreai++;
-        }else if(playerselect == 'rock' && aiselect =='scissors'){
-            result= 'Rock Breaks the Scissors. Cool, User!'
-            scoreuser++;
-        }else if(playerselect == 'paper' && aiselect=='rock'){
-            result = 'Paper Wraps the Rock!, Well done!'
-            scoreuser++;
-        }else if(playerselect == 'paper' && aiselect=='scissors'){
-            result = 'Ai Picked Scissors and cut the User in Half!'
-            scoreai++;
-        }else if(playerselect =='scissors' && aiselect=='rock'){
-            result='Oh Boy! User is smashed with a ROCK!'
-            scoreai++;
-        }else if(playerselect == 'scissors' && aiselect=='paper'){
-            result='No More AI!. Paper is in Pieces!'
-            scoreuser++;
-        }
-    }else{
-        if (scoreuser>scoreai && scoreuser ==score5){
-            result = 'Game Over. User Wins!'
-        }else if(scoreai>scoreuser && scoreai ==score5){
-            result = 'Game Over. Ai wins'}   
-    }
-}
 
 
 
@@ -80,5 +103,3 @@ function aiselection(){
     document.getElementById('result').style.fontFamily="sans"
     document.getElementById('result').style.fontSize="3rem"
 }
-
-game(playerselect, aiselect)

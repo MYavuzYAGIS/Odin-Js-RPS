@@ -3,10 +3,10 @@
 const rockPlayed = document.querySelector('#rock');
 const scissorsPlayed = document.querySelector('#scissors');
 const paperPlayed = document.querySelector('#paper');
-const result = document.querySelector('.result').textContent;
+let result = document.querySelector('.result').textContent;
 // Player Variables:
-let aiselect;
 let playerselect;
+let ai_upper;
 
 // score variables:
 let tie = document.querySelector('.tie').textContent;
@@ -15,64 +15,48 @@ let user = document.querySelector('.user').textContent;
 
 
 // Player Selection!
+function userplay(){
+    rockPlayed.addEventListener('click', ()=>{
+        playerselect=game('rock',aiselect())
+        console.log(playerselect)
 
-rockPlayed.addEventListener('click', ()=>{
-    playerselect = 'rock';
-    console.log(playerselect),
-    AiGame()
-})
+    })
 
-scissorsPlayed.addEventListener('click',()=>{
-    playerselect='scisors';
-    console.log(playerselect)
-    AiGame()
-})
+    scissorsPlayed.addEventListener('click',()=>{
+        playerselect=game('scissors',aiselect())
+        
+    })
 
-paperPlayed.addEventListener('click', ()=>{
-    playerselect='paper';
-    console.log(playerselect)
-    AiGame()
-})
-
-
+    paperPlayed.addEventListener('click', ()=>{
+        playerselect=game('paper',aiselect())
+    })
+}
 // AI GAME WORKS!
-function AiGame(){
-    let ai_upper;
+let aiselect=()=>{
     let answer =  Math.floor(Math.random()* (3) +1);
     if (answer==1) {
-        aiselect = 'rock';
         ai_upper= 'Rock!'
         document.querySelector('.sub-header').textContent=`AI selected ${ai_upper}`
-        console.log(aiselect)
-
-        
+        return 'rock';
     } else if(answer==2) {
         ai_upper='Scissors!'
-        aiselect ='scissors';
         document.querySelector('.sub-header').textContent=`AI selected ${ai_upper}`
-        console.log(aiselect)
-
-
+        return 'scissors'
     }else if(answer==3){
-        aiselect = 'paper';
         ai_upper = 'Paper!'
         document.querySelector('.sub-header').textContent=`AI selected ${ai_upper}`
-        console.log(aiselect)
-
-    }else{
-        return
+        return 'paper'
     }
     document.getElementById('result').style.fontFamily="sans"
     document.getElementById('result').style.fontSize="3rem"
-    
 }
 
 
 //Game Logic 
 
-function GAME(playerselect,aiselect){
+function game(playerselect,aiselect){
     if(user<5 && ai<5){
-        if(aiselect==playerselect){
+        if(playerselect==aiselect){
             result = 'It is a Tie!'
             tie = tie+1
         }else if(playerselect=='rock' && aiselect=='paper'){
@@ -99,7 +83,7 @@ function GAME(playerselect,aiselect){
             result = 'Game Over. User Wins!'
         }else if(ai>user && ai ==5){
             result = 'Game Over. Ai wins'}   
-        }
+    }
 }
 
-
+game(playerselect, aiselect)

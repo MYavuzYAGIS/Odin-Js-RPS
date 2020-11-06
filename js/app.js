@@ -12,6 +12,9 @@ let tie = document.querySelector('.tie').innerText;
 let ai = document.querySelector('.ai').innerText;
 let user = document.querySelector('.user').innerText;
 
+let scoreai=0;
+let scoreuser=0;
+let tied=0;
 
 // user selections
 buttons.forEach((button) =>{button.addEventListener('click',()=>{
@@ -22,34 +25,35 @@ buttons.forEach((button) =>{button.addEventListener('click',()=>{
     })
 })
 
+
 function game(playerselect, aiselect){
-    if(user < 5 && ai < 5 ){
+    if(scoreuser < 5 && scoreai < 5 ){
         if(playerselect==aiselect){
             result = 'It is a Tie!'
-            tie = tie+1
+            tied = tied+1
         }else if(playerselect=='rock' && aiselect=='paper'){
             result = 'Paper Wraps the Rock, Sorry User!'
-            ai++;
+            scoreai++;
         }else if(playerselect == 'rock' && aiselect =='scissors'){
             result= 'Rock Breaks the Scissors. Cool, User!'
-            user++;
+            scoreuser++;
         }else if(playerselect == 'paper' && aiselect=='rock'){
             result = 'Paper Wraps the Rock!, Well done!'
-            user++;
+            scoreuser++;
         }else if(playerselect == 'paper' && aiselect=='scissors'){
             result = 'Ai Picked Scissors and cut the User in Half!'
-            ai++;
+            scoreai++;
         }else if(playerselect =='scissors' && aiselect=='rock'){
             result='Oh Boy! User is smashed with a ROCK!'
-            ai++;
+            scoreai++;
         }else if(playerselect == 'scissors' && aiselect=='paper'){
             result='No More AI!. Paper is in Pieces!'
-            user++;
+            scoreuser++;
         }
     }else{
-        if (user>ai && user ==5){
+        if (scoreuser>scoreai && scoreuser ==score5){
             result = 'Game Over. User Wins!'
-        }else if(ai>user && ai ==5){
+        }else if(scoreai>scoreuser && scoreai ==score5){
             result = 'Game Over. Ai wins'}   
     }
 }
@@ -77,6 +81,4 @@ function aiselection(){
     document.getElementById('result').style.fontSize="3rem"
 }
 
-
-//Game Logic 
-
+game(playerselect, aiselect)

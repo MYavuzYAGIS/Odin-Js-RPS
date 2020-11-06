@@ -12,7 +12,12 @@ const rockPlayed = document.querySelector('#rock');
 const scissorsPlayed = document.querySelector('#scissors');
 const paperPlayed = document.querySelector('#paper');
 
+// Global Variables
+let aiselect;
 let playerselect;
+
+
+// Player Selection!
 
 rockPlayed.addEventListener('click', ()=>{
     playerselect = 'rock';
@@ -24,7 +29,7 @@ scissorsPlayed.addEventListener('click',()=>{
     console.log(playerselect)
 })
 
-paperPlayed =addEventListener('click', ()=>{
+paperPlayed.addEventListener('click', ()=>{
     playerselect='paper';
     console.log(playerselect)
 })
@@ -40,31 +45,33 @@ paperPlayed =addEventListener('click', ()=>{
 
 
 
-let aiselect;
 // AI GAME WORKS!
 function AiGame(){
     let answer =  Math.floor(Math.random()* (3) +1);
     if (answer==1) {
         aiselect = 'rock';
         document.querySelector('.result').textContent='Ai Selected Rock!'
+        console.log(aiselect)
+
         
     } else if(answer==2) {
         aiselect ='scissors';
         document.querySelector('.result').textContent='Ai Selected Scissors!'
+        console.log(aiselect)
 
-    }else{
-        answer==3;
+
+    }else if(answer==3){
         aiselect = 'paper';
         document.querySelector('.result').textContent='Ai Selected Paper!'
+        console.log(aiselect)
+
+    }else{
+        return
     }
-    console.log(aiselect)
     document.getElementById('result').style.fontFamily="sans"
     document.getElementById('result').style.fontSize="3rem"
+    
 }
-
-AiGame()
-
-
 
 
 

@@ -42,21 +42,21 @@ function AiGame(){
     if (answer==1) {
         aiselect = 'rock';
         ai_upper= 'Rock!'
-        document.querySelector('.result').textContent=`AI selected ${ai_upper}`
+        document.querySelector('.sub-header').textContent=`AI selected ${ai_upper}`
         console.log(aiselect)
 
         
     } else if(answer==2) {
         ai_upper='Scissors!'
         aiselect ='scissors';
-        document.querySelector('.result').textContent=`AI selected ${ai_upper}`
+        document.querySelector('.sub-header').textContent=`AI selected ${ai_upper}`
         console.log(aiselect)
 
 
     }else if(answer==3){
         aiselect = 'paper';
         ai_upper = 'Paper!'
-        document.querySelector('.result').textContent=`AI selected ${ai_upper}`
+        document.querySelector('.sub-header').textContent=`AI selected ${ai_upper}`
         console.log(aiselect)
 
     }else{
@@ -67,6 +67,8 @@ function AiGame(){
     
 }
 
+
+//Game Logic 
 
 function GAME(playerselect,aiselect){
     if(user<5 && ai<5){

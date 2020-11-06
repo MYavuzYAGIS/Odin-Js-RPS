@@ -25,9 +25,11 @@ html {
 }
 
 #header header .sub-header {
-  font-size: 1.75rem;
-  margin-top: 1%;
+  font-size: 1.9rem;
+  margin-top: 1.5%;
+  margin-bottom: 3rem;
   text-align: center;
+  color: teal;
 }
 
 #main .results .result {
@@ -37,6 +39,7 @@ html {
   text-decoration: none;
   color: gray;
   padding: 3rem;
+  margin: 2rem auto;
 }
 
 #main .wrapper {

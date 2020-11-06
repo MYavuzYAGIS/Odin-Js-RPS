@@ -8,69 +8,84 @@ ne gerekiyor?
 6)sayacta ai ya da person 5e ulastigi zaman oyun bitecek
 7)basic comparison ile winner declare edilecek.
 */
-
-
-
-const RESULT_TEXT = document.querySelector('.result').innerHTML;
-let AiScore = document.querySelector('.ai').innerHTML;
-let PlayerScore = document.querySelector('.playerx').innerHTML;
-let StaleMate = document.querySelector('.tie').innerHTML;
-let playerselect='nothing is selected';
 let aiselect;
+let playerselect;
 
 
-
-
-
-
-
+// AI GAME WORKS!
 function AiGame(){
-// computer makes a random choice between 1 and 3, inclusive
-    
     let answer =  Math.floor(Math.random()* (3) +1);
-    console.log(answer)
     if (answer==1) {
         aiselect = 'rock';
-        console.log(aiselect)
+        document.querySelector('.result').textContent='Ai Selected Rock!'
+        
     } else if(answer==2) {
         aiselect ='scissors';
-        console.log(aiselect)
+        document.querySelector('.result').textContent='Ai Selected Scissors!'
+
     }else{
+        answer==3;
         aiselect = 'paper';
-        console.log(aiselect)
+        document.querySelector('.result').textContent='Ai Selected Paper!'
     }
-}
-// AI GAME WORKS!
-
-
-function PlayerGame(){
-    let rock = document.getElementById('rock');
-    let paper = document.getElementById('paper');
-    let scissors = document.getElementById('scissors');
-
-    rock.addEventListener("click",()=>{playerselect=rock.querySelector("span").innerText; console.log(playerselect)})
-    paper.addEventListener("click",()=>{playerselect=paper.querySelector("span").innerText; console.log(playerselect)})
-    scissors.addEventListener("click",()=>{playerselect=scissors.querySelector("span").innerText; console.log(playerselect)})
-    // if user click on this, playerselect == this. else, this.
+    console.log(aiselect)
+    document.getElementById('result').style.fontFamily="sans"
+    document.getElementById('result').style.fontSize="3rem"
 }
 
-// PlayerGame Works!
-
-function comparison(){
-
-
-}
-
-
-function Game(){
 AiGame()
-PlayerGame()
-comparison()
 
-};
 
-Game()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function PlayerGame(){
+//     let rock = document.getElementById('rock');
+//     let paper= document.getElementById('paper');
+//     let scissors = document.getElementById('scissors');
+
+// }
+
+// function PlayGame(aiselect, playerselect){
+//     if (aiselect==playerselect) {
+//         document.querySelector('.result')='AI selected what you selected it is a tie!';
+//         document.querySelector('.tie').innerHTML++;
+        
+//     } else if() {
+        
+//     }else if(){
+
+//     }else if(){
+
+//     }
+
+
+
+// }
+
+// https://github.com/ivanv257/Rock-Paper-Scissors-JavaScript-Project/blob/master/script.js
+
+// nice and compatible code to try!
 
 
 

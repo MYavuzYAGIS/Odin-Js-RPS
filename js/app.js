@@ -8,10 +8,39 @@ ne gerekiyor?
 6)sayacta ai ya da person 5e ulastigi zaman oyun bitecek
 7)basic comparison ile winner declare edilecek.
 */
-let aiselect;
+const rockPlayed = document.querySelector('#rock');
+const scissorsPlayed = document.querySelector('#scissors');
+const paperPlayed = document.querySelector('#paper');
+
 let playerselect;
 
+rockPlayed.addEventListener('click', ()=>{
+    playerselect = 'rock';
+    console.log(playerselect)
+})
 
+scissorsPlayed.addEventListener('click',()=>{
+    playerselect='scisors';
+    console.log(playerselect)
+})
+
+paperPlayed =addEventListener('click', ()=>{
+    playerselect='paper';
+    console.log(playerselect)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+let aiselect;
 // AI GAME WORKS!
 function AiGame(){
     let answer =  Math.floor(Math.random()* (3) +1);

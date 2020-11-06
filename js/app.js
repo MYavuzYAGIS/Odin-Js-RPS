@@ -1,10 +1,18 @@
+
+// Global Variables
 const rockPlayed = document.querySelector('#rock');
 const scissorsPlayed = document.querySelector('#scissors');
 const paperPlayed = document.querySelector('#paper');
-
-// Global Variables
+const result = document.querySelector('.result').textContent;
+// Player Variables:
 let aiselect;
 let playerselect;
+
+// score variables:
+let tie = document.querySelector('.tie').textContent;
+let ai = document.querySelector('.ai').textContent;
+let user = document.querySelector('.user').textContent;
+
 
 // Player Selection!
 
@@ -60,7 +68,12 @@ function AiGame(){
 }
 
 
-function play(playerselect, aiselect){
+function GAME(aiselect, playerselect){
+    if(tie < 5 && user<5 && ai<5){
+
+    }else{
+
+    }
 
 
 }
@@ -72,31 +85,6 @@ function play(playerselect, aiselect){
 
 
 
-
-
-// function PlayerGame(){
-//     let rock = document.getElementById('rock');
-//     let paper= document.getElementById('paper');
-//     let scissors = document.getElementById('scissors');
-
-// }
-
-// function PlayGame(aiselect, playerselect){
-//     if (aiselect==playerselect) {
-//         document.querySelector('.result')='AI selected what you selected it is a tie!';
-//         document.querySelector('.tie').innerHTML++;
-        
-//     } else if() {
-        
-//     }else if(){
-
-//     }else if(){
-
-//     }
-
-
-
-// }
 
 // https://github.com/ivanv257/Rock-Paper-Scissors-JavaScript-Project/blob/master/script.js
 

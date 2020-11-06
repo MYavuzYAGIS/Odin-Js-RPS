@@ -16,7 +16,6 @@ const paperPlayed = document.querySelector('#paper');
 let aiselect;
 let playerselect;
 
-
 // Player Selection!
 
 rockPlayed.addEventListener('click', ()=>{
@@ -35,34 +34,28 @@ paperPlayed.addEventListener('click', ()=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
 // AI GAME WORKS!
 function AiGame(){
+    let ai_upper;
     let answer =  Math.floor(Math.random()* (3) +1);
     if (answer==1) {
         aiselect = 'rock';
-        document.querySelector('.result').textContent='Ai Selected Rock!'
+        ai_upper= 'Rock!'
+        document.querySelector('.result').textContent=`AI selected ${ai_upper}`
         console.log(aiselect)
 
         
     } else if(answer==2) {
+        ai_upper='Scissors!'
         aiselect ='scissors';
-        document.querySelector('.result').textContent='Ai Selected Scissors!'
+        document.querySelector('.result').textContent=`AI selected ${ai_upper}`
         console.log(aiselect)
 
 
     }else if(answer==3){
         aiselect = 'paper';
-        document.querySelector('.result').textContent='Ai Selected Paper!'
+        ai_upper = 'Paper!'
+        document.querySelector('.result').textContent=`AI selected ${ai_upper}`
         console.log(aiselect)
 
     }else{
@@ -73,12 +66,9 @@ function AiGame(){
     
 }
 
-
-
-
-
-
-
+function compare{
+    
+}
 
 
 

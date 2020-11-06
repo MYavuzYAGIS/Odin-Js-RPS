@@ -11,8 +11,9 @@ html {
 #header {
   display: flex;
   flex-direction: column;
-  height: 20vh;
+  height: 22vh;
   padding-top: 1%;
+  padding-bottom: 9rem;
   background-color: teal;
   color: wheat;
 }
@@ -25,11 +26,11 @@ html {
 }
 
 #header header .sub-header {
-  font-size: 1.9rem;
-  margin-top: 1.5%;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
   text-align: center;
-  color: teal;
+  color: wheat;
 }
 
 #main .results .result {
@@ -38,7 +39,7 @@ html {
   font-size: 2rem;
   text-decoration: none;
   color: gray;
-  padding: 3rem;
+  padding: 1rem;
   margin: 2rem auto;
 }
 

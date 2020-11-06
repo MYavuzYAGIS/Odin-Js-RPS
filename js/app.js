@@ -1,13 +1,3 @@
-/* 
-ne gerekiyor?
-1) sayac olacak 0-0-0
-2) kullanici bir i'ye basacak
-3) pc ayni anda random bir secenek yapacak
-4) karar mekanizmasi calisacak
-5)karar sonucuna gore sayac update olacak
-6)sayacta ai ya da person 5e ulastigi zaman oyun bitecek
-7)basic comparison ile winner declare edilecek.
-*/
 const rockPlayed = document.querySelector('#rock');
 const scissorsPlayed = document.querySelector('#scissors');
 const paperPlayed = document.querySelector('#paper');
@@ -20,17 +10,20 @@ let playerselect;
 
 rockPlayed.addEventListener('click', ()=>{
     playerselect = 'rock';
-    console.log(playerselect)
+    console.log(playerselect),
+    AiGame()
 })
 
 scissorsPlayed.addEventListener('click',()=>{
     playerselect='scisors';
     console.log(playerselect)
+    AiGame()
 })
 
 paperPlayed.addEventListener('click', ()=>{
     playerselect='paper';
     console.log(playerselect)
+    AiGame()
 })
 
 
@@ -66,15 +59,11 @@ function AiGame(){
     
 }
 
-function compare{
-    
+
+function play(playerselect, aiselect){
+
+
 }
-
-
-
-
-
-
 
 
 

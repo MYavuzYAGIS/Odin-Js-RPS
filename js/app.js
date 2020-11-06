@@ -68,28 +68,36 @@ function AiGame(){
 }
 
 
-function GAME(aiselect, playerselect){
-    if(tie < 5 && user<5 && ai<5){
-
+function GAME(playerselect,aiselect){
+    if(user<5 && ai<5){
+        if(aiselect==playerselect){
+            result = 'It is a Tie!'
+            tie = tie+1
+        }else if(playerselect=='rock' && aiselect=='paper'){
+            result = 'Paper Wraps the Rock, Sorry User!'
+            ai++;
+        }else if(playerselect == 'rock' && aiselect =='scissors'){
+            result= 'Rock Breaks the Scissors. Cool, User!'
+            user++;
+        }else if(playerselect == 'paper' && aiselect=='rock'){
+            result = 'Paper Wraps the Rock!, Well done!'
+            user++;
+        }else if(playerselect == 'paper' && aiselect=='scissors'){
+            result = 'Ai Picked Scissors and cut the User in Half!'
+            ai++;
+        }else if(playerselect =='scissors' && aiselect=='rock'){
+            result='Oh Boy! User is smashed with a ROCK!'
+            ai++;
+        }else if(playerselect == 'scissors' && aiselect=='paper'){
+            result='No More AI!. Paper is in Pieces!'
+            user++;
+        }
     }else{
-
-    }
-
-
+        if (user>ai && user ==5){
+            result = 'Game Over. User Wins!'
+        }else if(ai>user && ai ==5){
+            result = 'Game Over. Ai wins'}   
+        }
 }
-
-
-
-
-
-
-
-
-
-// https://github.com/ivanv257/Rock-Paper-Scissors-JavaScript-Project/blob/master/script.js
-
-// nice and compatible code to try!
-
-
 
 

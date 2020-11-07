@@ -1,7 +1,6 @@
 # The Odin Poject Fundamentals - JS 
 ## Rock & Paper & Scissors Assignment
-
-![](https://media.giphy.com/media/Z7syBJH78V0oo/giphy.gif)
+![During the Game](img/odin.png)
 
 This repo contains the Rock&Paper&Scissors assignment assigned by The Odin Project.
 
@@ -30,3 +29,4 @@ Rules are known, thus I will not make mention of them in the readme.
 
 
 This was a trial, it may need optimization and editing. 
+![](https://media.giphy.com/media/Z7syBJH78V0oo/giphy.gif)

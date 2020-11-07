@@ -15,4 +15,4 @@ As an immdediate outcome, I feel much more flexible and comfortable with JS and 
 
 This was worth of 2 full tutorials. 
 
-## Take it from me : `Doing the the best tutorial!`
+## Take it from me : `Practice is the best tutorial!`
